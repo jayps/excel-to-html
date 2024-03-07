@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: converter-web
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploader</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'uploader/styles.css' %}"/>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    <div class="input-container">
+        <label for="excel_file">Excel File</label>
+        <input type="file" id="excel_file" name="excel_file" required/>
+    </div>
+    <div class="input-container">
+        <label for="html_template">HTML Template</label>
+        <input type="file" id="html_template" name="html_template" required/>
+    </div>
+    <div class="submit-container">
+        {% csrf_token %}
+        <button type="submit" class="btn">Submit</button>
+    </div>
+    <div class="notes">
+        <p>
+            <strong>
+                Please note
+            </strong>
+        </p>
+        <ul>
+            <li>
+                Variables in your template should be entered as <code>&lcub;&lcub; variableName &rcub;&rcub;</code>.
+            </li>
+            <li>
+                Headings in your excel sheet should match variables <em>exactly</em>.
+            </li>
+            <li>
+                Any headings that are not used in the template will be ignored.
+            </li>
+            <li>
+                Any variables in the template that don't have a heading in the excel sheet will be ignored.
+            </li>
+        </ul>
+    </div>
+</form>
+</body>
+</html>

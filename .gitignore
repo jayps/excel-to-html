@@ -1,0 +1,12 @@
+db-data
+env
+.idea
+*.pyc
+*.sqlite3
+/static
+htmlcov
+.coverage
+venv
+downloads
+.DS_Store
+staticfiles
